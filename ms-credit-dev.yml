@@ -1,0 +1,36 @@
+application:
+  location: config (Github)
+  config:
+    profile: dev
+    description: valor obtenido desde "ms-credit-dev.yml"
+spring:
+  data:
+    mongodb:
+      database: credits
+      host: localhost
+      port: 27017
+server:
+  port: 8083
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health, info, refresh, restart, env
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    refresh:
+      enabled: true
+    restart:
+      enabled: true
+    env:
+      enabled: true
